@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditionals and loops</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <a href="/Getting Started/index.html">Home</a>
+  <h1>Conditions and Loops</h1>
+  <p>
+    This example demonstrates that we can bind data to the structure of the DOM too. 
+  </p>
+  <p>
+    Vue also provides a powerful transition effect system that can automatically apply transition effects when elements are inserted/updated/removed by Vue.
+  </p>
+  <p>
+    the v-for directive can be used to display a list of items using the data from an array:
+  </p>  
+  <h2>If directive</h2>
+  <div id="conditional-rendering">
+    <span v-if="seen">Now you see me</span>
+
+    <button v-on:click="toggleMessage">Toggle Message</button>
+  </div>
+<hr/>
+<h2>For directive to display list</h2>
+<div id="list-rendering">
+    <ol>
+      <li v-for="todo in todos">
+        {{ todo.text }}
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
+
+
+
+<script>
+  const ConditionalRendering = {
+      
+  data() {
+    return {
+      seen: true
+    }
+  },
+  methods: {
+    toggleMessage() {
+      seen: false
+    }
+  }
+}
+
+Vue.createApp(ConditionalRendering).mount('#conditional-rendering')
+
+
+
+const ListRendering = {
+  data() {
+    return {
+      todos: [
+        { text: 'Learn JavaScript' },
+        { text: 'Learn Vue' },
+        { text: 'Build something awesome' }
+      ]
+    }
+  }
+}
+
+Vue.createApp(ListRendering).mount('#list-rendering')
+</script>
+
+
+<style>
+    .demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+</style>
