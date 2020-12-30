@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <a href="/Getting Started/index.html">Home</a>
+  <h1>User Input handling and two way binding</h1>
+  <p>
+    To let users interact with the app, we can use the v-on directive to attach event listeners that invoke methods on our instances:
+  </p>
+  <p>
+    In this method we update the state of our app without touching the DOM - all DOM manipulations are handled by Vue, and the code is focused on the underlying logic.
+  </p>
+  <p>
+    Vue also provides the v-model directive that makes two-way binding between form input and app state.
+  </p>
+  <hr/>
+    <div id="event-handling">
+  <p>{{ message }}</p>
+  <input v-model="message" /><br/>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+</body>
+</html>
+
+
+
+<script>
+    const EventHandling = {
+  data() {
+    return {
+      message: 'Hello Vue.js!'
+    }
+  },
+  methods: {
+    reverseMessage() {
+      this.message = this.message
+        .split('')
+        .reverse()
+        .join('')
+    }
+  }
+}
+
+Vue.createApp(EventHandling).mount('#event-handling')
+</script>
+
+
+<style>
+    .demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+</style>

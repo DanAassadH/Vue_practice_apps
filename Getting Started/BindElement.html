@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+  <a href="/Getting Started/index.html">Home</a>
+  <p>
+    The v-bind attribute is called a directive. Directives are prefixed with v- to indicate that they are special attributes provided by Vue, they apply special reactive behavior to the rendered DOM. 
+    
+  </p>
+  <div id="bind-attribute" class="demo">
+    <span v-bind:title="message">
+      Hover your mouse over me for a few seconds to see my dynamically-bound
+      title! 
+    </span>
+  </div>
+</body>
+</html>
+
+
+
+<script>
+    const AttributeBindingApp = {
+  data() {
+    return {
+      message: 'You loaded this page on ' + new Date().toLocaleString()
+    }
+  }
+}
+
+Vue.createApp(AttributeBindingApp).mount('#bind-attribute')
+</script>
+
+
+<style>
+    .demo {
+  font-family: sans-serif;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  padding: 20px 30px;
+  margin-top: 1em;
+  margin-bottom: 40px;
+  user-select: none;
+  overflow-x: auto;
+}
+</style>
