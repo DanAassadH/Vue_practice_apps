@@ -42,7 +42,8 @@
             :class="{ 'bg-green-200': todo.done }"
           >
             <div>
-              <div v-if="!todo.isEditing"
+              <div
+                v-if="!todo.isEditing"
                 @dblclick="enableEdit(todo.text, index)"
                 :class="{ done: todo.done }"
               >

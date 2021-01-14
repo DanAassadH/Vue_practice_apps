@@ -1,1 +1,1 @@
-Vue practices
+Vue Projects and practices
