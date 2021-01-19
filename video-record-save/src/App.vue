@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-    <VideoJSRecord />
+  <div>
+    <!-- <VideoJSRecord /> -->
+ </div>
+ <div>
+    <MobileRecord />
+  </div>
   </div>
 </template>
 
 <script>
-import VideoJSRecord from './components/VideoJSRecord.vue'
+//import VideoJSRecord from './components/VideoJSRecord.vue'
+import MobileRecord from './components/MobileRecord.vue'
 
 export default {
   name: 'app',
   components: {
-    VideoJSRecord
+  //  VideoJSRecord,
+    MobileRecord
   }
 }
 </script>
